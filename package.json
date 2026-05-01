@@ -1,0 +1,28 @@
+{
+  "name": "bpmn-promela-translator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "BPMN 2.0 XML to Promela Translator",
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "tsx src/main.ts"
+  },
+  "keywords": [
+    "BPMN",
+    "Promela",
+    "XML",
+    "Formal Verification",
+    "Model Checking"
+  ],
+  "author": "David Le Duy",
+  "license": "ISC",
+  "dependencies": {
+    "bpmn-moddle": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/bpmn-moddle": "^10.0.0",
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}

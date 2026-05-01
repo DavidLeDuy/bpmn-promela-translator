@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:drools="http://www.jboss.org/drools" xmlns:xsi="xsi" id="_lgdWoCGNED-BweenKIgr3Q" targetNamespace="http://www.omg.org/bpmn20" exporter="jBPM Process Modeler" exporterVersion="2.0">
+  <bpmn2:collaboration id="_2F211935-9BC0-4454-8A26-A84685CF1064" name="Default Collaboration">
+    <bpmn2:participant id="_2F9F805F-E894-4BB1-8768-C8301F09C143" name="Pool Participant" processRef="multiple_terminations_corrected" />
+  </bpmn2:collaboration>
+  <bpmn2:process id="multiple_terminations_corrected" name="multiple_terminations_corrected" processType="Public" drools:packageName="com.example" drools:version="1.0" drools:adHoc="false">
+    <bpmn2:laneSet>
+      <bpmn2:lane id="l1" name="Deadlock Example">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue>Deadlock Example</drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:flowNodeRef>Activity_19aoqgd</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>Activity_0hgxxro</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>e1</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>Gateway_16lz908</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>_3E888BD8-C2F4-4DB1-BB60-9085D090ECA6</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>Activity_07o232y</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>Activity_11e1f24</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>e2</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>Gateway_0vxjijz</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>Gateway_1tnd8k0</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:sequenceFlow id="Flow_12ha33e" name="S to xorMerge" sourceRef="e1" targetRef="Gateway_16lz908">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>S to xorMerge</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_061F9FD1-EA93-49B2-9598-3AE067EDF500" sourceRef="Activity_0hgxxro" targetRef="_3E888BD8-C2F4-4DB1-BB60-9085D090ECA6" />
+    <bpmn2:sequenceFlow id="Flow_1y5t056" sourceRef="Gateway_16lz908" targetRef="Activity_0hgxxro" />
+    <bpmn2:sequenceFlow id="_65E3D146-9292-4915-B70D-1867E439D5BB" sourceRef="Activity_19aoqgd" targetRef="_3E888BD8-C2F4-4DB1-BB60-9085D090ECA6" />
+    <bpmn2:sequenceFlow id="Flow_1ryjv5k" sourceRef="Gateway_16lz908" targetRef="Activity_19aoqgd" />
+    <bpmn2:startEvent id="e1" name="Start A">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>Start A</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>Flow_12ha33e</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:endEvent id="e2" name="End">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>End</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>Flow_1f0cfmi</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:task id="Activity_0hgxxro" name="Task B">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>Task B</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>Flow_1y5t056</bpmn2:incoming>
+      <bpmn2:outgoing>_061F9FD1-EA93-49B2-9598-3AE067EDF500</bpmn2:outgoing>
+    </bpmn2:task>
+    <bpmn2:task id="Activity_19aoqgd" name="Task A">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>Task A</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>Flow_1ryjv5k</bpmn2:incoming>
+      <bpmn2:outgoing>_65E3D146-9292-4915-B70D-1867E439D5BB</bpmn2:outgoing>
+    </bpmn2:task>
+    <bpmn2:exclusiveGateway id="Gateway_16lz908" name="Split">
+      <bpmn2:incoming>Flow_12ha33e</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1y5t056</bpmn2:outgoing>
+      <bpmn2:outgoing>Flow_1ryjv5k</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:exclusiveGateway id="_3E888BD8-C2F4-4DB1-BB60-9085D090ECA6">
+      <bpmn2:incoming>_061F9FD1-EA93-49B2-9598-3AE067EDF500</bpmn2:incoming>
+      <bpmn2:incoming>_65E3D146-9292-4915-B70D-1867E439D5BB</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_0mwclbe</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:task id="Activity_07o232y" name="Task A">
+      <bpmn2:incoming>Flow_0irq30q</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1j5a3cl</bpmn2:outgoing>
+    </bpmn2:task>
+    <bpmn2:task id="Activity_11e1f24" name="Task B">
+      <bpmn2:incoming>Flow_12zh6se</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_0y02zda</bpmn2:outgoing>
+    </bpmn2:task>
+    <bpmn2:sequenceFlow id="Flow_12zh6se" sourceRef="Gateway_0vxjijz" targetRef="Activity_11e1f24" />
+    <bpmn2:sequenceFlow id="Flow_0irq30q" sourceRef="Gateway_0vxjijz" targetRef="Activity_07o232y" />
+    <bpmn2:sequenceFlow id="Flow_1j5a3cl" sourceRef="Activity_07o232y" targetRef="Gateway_1tnd8k0" />
+    <bpmn2:sequenceFlow id="Flow_0y02zda" sourceRef="Activity_11e1f24" targetRef="Gateway_1tnd8k0" />
+    <bpmn2:sequenceFlow id="Flow_0mwclbe" sourceRef="_3E888BD8-C2F4-4DB1-BB60-9085D090ECA6" targetRef="Gateway_0vxjijz" />
+    <bpmn2:sequenceFlow id="Flow_1f0cfmi" sourceRef="Gateway_1tnd8k0" targetRef="e2" />
+    <bpmn2:parallelGateway id="Gateway_0vxjijz" name="Split">
+      <bpmn2:incoming>Flow_0mwclbe</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_12zh6se</bpmn2:outgoing>
+      <bpmn2:outgoing>Flow_0irq30q</bpmn2:outgoing>
+    </bpmn2:parallelGateway>
+    <bpmn2:parallelGateway id="Gateway_1tnd8k0">
+      <bpmn2:incoming>Flow_1j5a3cl</bpmn2:incoming>
+      <bpmn2:incoming>Flow_0y02zda</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1f0cfmi</bpmn2:outgoing>
+    </bpmn2:parallelGateway>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="multiple_terminations_corrected">
+      <bpmndi:BPMNShape id="shape_l1" bpmnElement="l1">
+        <dc:Bounds x="30" y="50" width="1470" height="400" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_e1" bpmnElement="e1">
+        <dc:Bounds x="60" y="270" width="56" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_Activity_0hgxxro" bpmnElement="Activity_0hgxxro">
+        <dc:Bounds x="340" y="310" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_Activity_19aoqgd" bpmnElement="Activity_19aoqgd">
+        <dc:Bounds x="340" y="195" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_099bp1i_di" bpmnElement="Gateway_16lz908" isMarkerVisible="true">
+        <dc:Bounds x="195" y="265" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="212" y="321" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1h9yosq_di" bpmnElement="_3E888BD8-C2F4-4DB1-BB60-9085D090ECA6" isMarkerVisible="true">
+        <dc:Bounds x="542" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_08kxwyy" bpmnElement="Activity_07o232y">
+        <dc:Bounds x="960" y="195" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0xlcdo7" bpmnElement="Activity_11e1f24">
+        <dc:Bounds x="960" y="310" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_e2" bpmnElement="e2">
+        <dc:Bounds x="1302" y="262" width="56" height="56" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1320" y="318" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_10i027o_di" bpmnElement="Gateway_0vxjijz">
+        <dc:Bounds x="815" y="265" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="875" y="283" width="22" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_065qywy_di" bpmnElement="Gateway_1tnd8k0">
+        <dc:Bounds x="1162" y="265" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape_e1_to_shape_Gateway_16lz908" bpmnElement="Flow_12ha33e">
+        <di:waypoint x="115" y="290" />
+        <di:waypoint x="195" y="290" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="120" y="265" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_Activity_0hgxxro_to_shape__3E888BD8-C2F4-4DB1-BB60-9085D090ECA6" bpmnElement="_061F9FD1-EA93-49B2-9598-3AE067EDF500">
+        <di:waypoint x="440" y="350" />
+        <di:waypoint x="567" y="350" />
+        <di:waypoint x="567" y="315" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_Gateway_16lz908_to_shape_Activity_0hgxxro" bpmnElement="Flow_1y5t056">
+        <di:waypoint x="220" y="315" />
+        <di:waypoint x="220" y="350" />
+        <di:waypoint x="340" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_Activity_19aoqgd_to_shape__3E888BD8-C2F4-4DB1-BB60-9085D090ECA6" bpmnElement="_65E3D146-9292-4915-B70D-1867E439D5BB">
+        <di:waypoint x="440" y="235" />
+        <di:waypoint x="570" y="235" />
+        <di:waypoint x="570" y="268" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_Gateway_16lz908_to_shape_Activity_19aoqgd" bpmnElement="Flow_1ryjv5k">
+        <di:waypoint x="220" y="265" />
+        <di:waypoint x="220" y="235" />
+        <di:waypoint x="340" y="235" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0mwclbe_di" bpmnElement="Flow_0mwclbe">
+        <di:waypoint x="592" y="290" />
+        <di:waypoint x="815" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_13siqbz" bpmnElement="Flow_1j5a3cl">
+        <di:waypoint x="1060" y="235" />
+        <di:waypoint x="1190" y="235" />
+        <di:waypoint x="1190" y="268" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_04nv013" bpmnElement="Flow_0y02zda">
+        <di:waypoint x="1060" y="350" />
+        <di:waypoint x="1187" y="350" />
+        <di:waypoint x="1187" y="315" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_06lj5v3" bpmnElement="Flow_0irq30q">
+        <di:waypoint x="840" y="265" />
+        <di:waypoint x="840" y="235" />
+        <di:waypoint x="960" y="235" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_0890ewe" bpmnElement="Flow_12zh6se">
+        <di:waypoint x="840" y="315" />
+        <di:waypoint x="840" y="350" />
+        <di:waypoint x="960" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1f0cfmi_di" bpmnElement="Flow_1f0cfmi">
+        <di:waypoint x="1212" y="290" />
+        <di:waypoint x="1302" y="290" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters />
+          <bpsim:ElementParameters elementRef="Activity_19aoqgd">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0" />
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="Activity_0hgxxro">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0" />
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0" />
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="e1">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0" />
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_lgdWoCGNED-BweenKIgr3Q</bpmn2:source>
+    <bpmn2:target>_lgdWoCGNED-BweenKIgr3Q</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>
