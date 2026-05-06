@@ -2,3 +2,9 @@ node_modules
 yarn-debug.log
 yarn-error.log
 .vscode
+
+# spin generated files
+src/promela/*/*.tmp
+src/promela/*/*.trail
+src/promela/*/*.pml.bak
+src/promela/*/*.trail.out
