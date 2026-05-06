@@ -1,6 +1,4 @@
 bool Event_1uushxv;
-ltl reach_all_end_events { <> (Event_1uushxv)};
-ltl no_token_left_behind { [] ((Event_1uushxv) -> (len(Flow_0ckbmbp) == 0 && len(Flow_1w30amw) == 0 && len(Flow_0hey1xg) == 0 && len(Flow_0hzzaf9) == 0 && len(_9A7BA64F_2F2E_410B_BD98_6FFA48F943DA) == 0 && len(Flow_14p4q5r) == 0 && len(Flow_1byutdj) == 0 && len(Flow_09nopbi) == 0))}
 ltl test { <> ((Event_1uushxv) && (len(Flow_0ckbmbp) == 0 && len(Flow_1w30amw) == 0 && len(Flow_0hey1xg) == 0 && len(Flow_0hzzaf9) == 0 && len(_9A7BA64F_2F2E_410B_BD98_6FFA48F943DA) == 0 && len(Flow_14p4q5r) == 0 && len(Flow_1byutdj) == 0 && len(Flow_09nopbi) == 0))}
 chan Flow_0ckbmbp = [2] of { bit };
 chan Flow_1w30amw = [2] of { bit };

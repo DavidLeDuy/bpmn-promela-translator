@@ -1,6 +1,4 @@
 bool Event_1sdloo5;
-ltl reach_all_end_events { <> (Event_1sdloo5)};
-ltl no_token_left_behind { [] ((Event_1sdloo5) -> (len(Flow_18hry6m) == 0 && len(Flow_176mcd0) == 0 && len(Flow_0mmh39s) == 0 && len(Flow_0fceg8u) == 0 && len(Flow_09oputu) == 0))}
 ltl test { <> ((Event_1sdloo5) && (len(Flow_18hry6m) == 0 && len(Flow_176mcd0) == 0 && len(Flow_0mmh39s) == 0 && len(Flow_0fceg8u) == 0 && len(Flow_09oputu) == 0))}
 chan Flow_18hry6m = [2] of { bit };
 chan Flow_176mcd0 = [2] of { bit };

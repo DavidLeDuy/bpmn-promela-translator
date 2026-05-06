@@ -1,6 +1,4 @@
 bool Event_0z828wa;
-ltl reach_all_end_events { <> (Event_0z828wa)};
-ltl no_token_left_behind { [] ((Event_0z828wa) -> (len(Flow_0itp0jh) == 0 && len(Flow_05lconz) == 0 && len(Flow_0socqr3) == 0 && len(Flow_014o5z6) == 0 && len(Flow_10ekyzb) == 0))}
 ltl test { <> ((Event_0z828wa) && (len(Flow_0itp0jh) == 0 && len(Flow_05lconz) == 0 && len(Flow_0socqr3) == 0 && len(Flow_014o5z6) == 0 && len(Flow_10ekyzb) == 0))}
 chan Flow_0itp0jh = [2] of { bit };
 chan Flow_05lconz = [2] of { bit };

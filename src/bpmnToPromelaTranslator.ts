@@ -226,10 +226,10 @@ export async function convertBpmnToPromela(xml: string): Promise<string> {
   // === LTL ===
   // const endEvent = processes[0]?.nodes.find((n: any) => n.$type === 'bpmn:EndEvent')?.id;
   if (endEvents?.length > 0) {
-    promela.push(`ltl reach_all_end_events { <> (${endEvents.map((e: any) => e.id).join(' && ')})};`);
-    promela.push(
-      `ltl no_token_left_behind { [] ((${endEvents.map((e: any) => e.id).join(' && ')}) -> (${allflows.map((f: any) => `len(${f.id}) == 0`).join(' && ')}))}`,
-    );
+    // promela.push(`ltl reach_all_end_events { <> (${endEvents.map((e: any) => e.id).join(' && ')})};`);
+    // promela.push(
+    //   `ltl no_token_left_behind { [] ((${endEvents.map((e: any) => e.id).join(' && ')}) -> (${allflows.map((f: any) => `len(${f.id}) == 0`).join(' && ')}))}`,
+    // );
     promela.push(
       `ltl test { <> ((${endEvents.map((e: any) => e.id).join(' || ')}) && (${allflows.map((f: any) => `len(${f.id}) == 0`).join(' && ')}))}`,
     );

@@ -1,6 +1,4 @@
 bool Event_0er1rer;
-ltl reach_all_end_events { <> (Event_0er1rer)};
-ltl no_token_left_behind { [] ((Event_0er1rer) -> (len(Flow_18hry6m) == 0 && len(Flow_0k243p1) == 0 && len(Flow_1q12yo1) == 0 && len(Flow_0msbshj) == 0 && len(Flow_19hhf86) == 0 && len(Flow_1lrtpjz) == 0))}
 ltl test { <> ((Event_0er1rer) && (len(Flow_18hry6m) == 0 && len(Flow_0k243p1) == 0 && len(Flow_1q12yo1) == 0 && len(Flow_0msbshj) == 0 && len(Flow_19hhf86) == 0 && len(Flow_1lrtpjz) == 0))}
 chan Flow_18hry6m = [2] of { bit };
 chan Flow_0k243p1 = [2] of { bit };

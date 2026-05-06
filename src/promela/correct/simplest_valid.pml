@@ -1,6 +1,4 @@
 bool Event_1ukl08a;
-ltl reach_all_end_events { <> (Event_1ukl08a)};
-ltl no_token_left_behind { [] ((Event_1ukl08a) -> (len(Flow_0dk7ot5) == 0 && len(Flow_0pm0tcb) == 0))}
 ltl test { <> ((Event_1ukl08a) && (len(Flow_0dk7ot5) == 0 && len(Flow_0pm0tcb) == 0))}
 chan Flow_0dk7ot5 = [2] of { bit };
 chan Flow_0pm0tcb = [2] of { bit };

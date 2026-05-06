@@ -1,6 +1,4 @@
 bool e2;
-ltl reach_all_end_events { <> (e2)};
-ltl no_token_left_behind { [] ((e2) -> (len(Flow_0q0fdtd) == 0 && len(Flow_12ha33e) == 0 && len(Flow_0g7xl2n) == 0 && len(Flow_0yomg7c) == 0 && len(Flow_1y5t056) == 0 && len(Flow_1ryjv5k) == 0))}
 ltl test { <> ((e2) && (len(Flow_0q0fdtd) == 0 && len(Flow_12ha33e) == 0 && len(Flow_0g7xl2n) == 0 && len(Flow_0yomg7c) == 0 && len(Flow_1y5t056) == 0 && len(Flow_1ryjv5k) == 0))}
 chan Flow_0q0fdtd = [2] of { bit };
 chan Flow_12ha33e = [2] of { bit };

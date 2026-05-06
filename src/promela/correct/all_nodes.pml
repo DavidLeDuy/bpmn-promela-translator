@@ -1,6 +1,4 @@
 bool e2, me1;
-ltl reach_all_end_events { <> (e2 && me1)};
-ltl no_token_left_behind { [] ((e2 && me1) -> (len(Flow_1k1shj7) == 0 && len(Flow_1p85p97) == 0 && len(f1) == 0 && len(f2) == 0 && len(f4) == 0 && len(f5) == 0 && len(f6) == 0 && len(f7) == 0 && len(f8) == 0 && len(f9) == 0 && len(f10) == 0 && len(f11) == 0 && len(f12) == 0 && len(f13) == 0 && len(f14) == 0 && len(f15) == 0 && len(f16) == 0 && len(f17) == 0 && len(f18) == 0 && len(f19) == 0 && len(f20) == 0 && len(f22) == 0 && len(f26) == 0 && len(f27) == 0 && len(Flow_02odx4p) == 0 && len(Flow_0lmjyde) == 0 && len(Flow_0o35r59) == 0 && len(Flow_0y6lfb8) == 0 && len(Flow_0gpaogy) == 0))}
 ltl test { <> ((e2 || me1) && (len(Flow_1k1shj7) == 0 && len(Flow_1p85p97) == 0 && len(f1) == 0 && len(f2) == 0 && len(f4) == 0 && len(f5) == 0 && len(f6) == 0 && len(f7) == 0 && len(f8) == 0 && len(f9) == 0 && len(f10) == 0 && len(f11) == 0 && len(f12) == 0 && len(f13) == 0 && len(f14) == 0 && len(f15) == 0 && len(f16) == 0 && len(f17) == 0 && len(f18) == 0 && len(f19) == 0 && len(f20) == 0 && len(f22) == 0 && len(f26) == 0 && len(f27) == 0 && len(Flow_02odx4p) == 0 && len(Flow_0lmjyde) == 0 && len(Flow_0o35r59) == 0 && len(Flow_0y6lfb8) == 0 && len(Flow_0gpaogy) == 0))}
 chan Flow_1k1shj7 = [2] of { bit };
 chan Flow_1p85p97 = [2] of { bit };

@@ -1,6 +1,4 @@
 bool Event_0dj6tnp;
-ltl reach_all_end_events { <> (Event_0dj6tnp)};
-ltl no_token_left_behind { [] ((Event_0dj6tnp) -> (len(Flow_0adhm0f) == 0 && len(Flow_0rlxvg9) == 0 && len(Flow_01e6afb) == 0 && len(Flow_04mw7pp) == 0 && len(Flow_18uw2hp) == 0 && len(Flow_10zyoyz) == 0 && len(Flow_1ayh8c4) == 0 && len(Flow_1mh1bh6) == 0 && len(Flow_1swjyuy) == 0 && len(Flow_1gjd5a1) == 0 && len(Flow_0t8ir75) == 0 && len(Flow_1sq8o3v) == 0 && len(Flow_0tob8dw) == 0 && len(Flow_0eeg6a5) == 0))}
 ltl test { <> ((Event_0dj6tnp) && (len(Flow_0adhm0f) == 0 && len(Flow_0rlxvg9) == 0 && len(Flow_01e6afb) == 0 && len(Flow_04mw7pp) == 0 && len(Flow_18uw2hp) == 0 && len(Flow_10zyoyz) == 0 && len(Flow_1ayh8c4) == 0 && len(Flow_1mh1bh6) == 0 && len(Flow_1swjyuy) == 0 && len(Flow_1gjd5a1) == 0 && len(Flow_0t8ir75) == 0 && len(Flow_1sq8o3v) == 0 && len(Flow_0tob8dw) == 0 && len(Flow_0eeg6a5) == 0))}
 chan Flow_0adhm0f = [2] of { bit };
 chan Flow_0rlxvg9 = [2] of { bit };

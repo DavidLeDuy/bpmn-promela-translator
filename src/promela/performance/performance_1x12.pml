@@ -1,6 +1,4 @@
 bool Event_0nu7zzn;
-ltl reach_all_end_events { <> (Event_0nu7zzn)};
-ltl no_token_left_behind { [] ((Event_0nu7zzn) -> (len(Flow_18hry6m) == 0 && len(Flow_176mcd0) == 0 && len(Flow_0mmh39s) == 0 && len(Flow_0fceg8u) == 0 && len(Flow_1dgybby) == 0 && len(Flow_1dvk7e5) == 0 && len(Flow_0oxfkvk) == 0 && len(Flow_1ft0ix3) == 0 && len(Flow_07la5lp) == 0 && len(Flow_01wxx0c) == 0 && len(Flow_05ulgmy) == 0 && len(Flow_0h3np34) == 0 && len(Flow_03kyzij) == 0))}
 ltl test { <> ((Event_0nu7zzn) && (len(Flow_18hry6m) == 0 && len(Flow_176mcd0) == 0 && len(Flow_0mmh39s) == 0 && len(Flow_0fceg8u) == 0 && len(Flow_1dgybby) == 0 && len(Flow_1dvk7e5) == 0 && len(Flow_0oxfkvk) == 0 && len(Flow_1ft0ix3) == 0 && len(Flow_07la5lp) == 0 && len(Flow_01wxx0c) == 0 && len(Flow_05ulgmy) == 0 && len(Flow_0h3np34) == 0 && len(Flow_03kyzij) == 0))}
 chan Flow_18hry6m = [2] of { bit };
 chan Flow_176mcd0 = [2] of { bit };
