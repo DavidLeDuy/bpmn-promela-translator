@@ -1,0 +1,14 @@
+services:
+  ispin:
+    build: .
+    container_name: ispin
+    ports:
+      - "6080:6080"
+    volumes:
+      - ../src/promela:/work
+    working_dir: /work
+    environment:
+      - DISPLAY=:0
+    restart: unless-stopped
+
+  
